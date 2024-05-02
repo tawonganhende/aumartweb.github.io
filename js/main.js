@@ -128,5 +128,68 @@
         return false;
     }); 
 
+     // Read More button
+  $('#read-more-btn').click(function (event) {
+    event.preventDefault(); // Prevent the default link behavior
+    $('#popup-box').show(); // Show the popup box
+  });
+
+    // Unlock Business Read More Button
+    $('#unlock-business-btn').click(function (event) {
+        event.preventDefault();
+        $('#unlock-business-box').show();
+    })
+
+    // when all are working, please find a way to make code short and better and remove the console logs
+
+    // FAQ Tab1 pressed
+    $('#faqTab-1').click(function (event) {
+        event.preventDefault();
+        $('#faq1-popup-box').show();
+
+        console.log("Popped")
+    })
+
+    // FAQ Tab2 pressed
+    $('#faqTab-2').click(function (event) {
+        event.preventDefault();
+        $('#faq2-popup-box').show();
+
+        console.log("Popped")
+    })
+
+    // FAQ Tab3 pressed
+    $('#faqTab-3').click(function (event) {
+        event.preventDefault();
+        $('#faq3-popup-box').show();
+
+        console.log("Popped")
+    })
+
+    // FAQ Tab4 pressed
+    $('#faqTab-4').click(function (event) {
+        event.preventDefault();
+        $('#faq4-popup-box').show();
+
+        console.log("Popped")
+    })
+
+    // FAQ 5 pressed
+    $('#faqTab-5').click(function (event) {
+        event.preventDefault();
+        $('#faq5-popup-box').show();
+
+        console.log("Popped")
+    })
+
+    // Hide popup boxes when clicked outside
+    $(document).click(function (event) {
+        if (event.target.id === 'popup-box' || event.target.id === 'unlock-business-box' || event.target.id === 'faq1-popup-box' || 
+        event.target.id === 'faq2-popup-box' || event.target.id === 'faq3-popup-box' || event.target.id === 'faq4-popup-box' || 
+        event.target.id === 'faq5-popup-box') {
+            $(event.target).hide(); // Hide the popup box if clicked outside the content area
+        }
+    });
+
 })(jQuery);
 
