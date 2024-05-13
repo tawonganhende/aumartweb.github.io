@@ -17,7 +17,8 @@ exports.handler = async (event, context) => {
         from: 'tawonga@aumartinvestments.com',
         to: 'tawonhende@gmail.com',
         subject: 'New Contact Form Submission',
-        text: `Name: ${data.name}\nEmail: ${data.email}\nMessage: ${data.message}`
+        // text: `Name: ${data.name}\nEmail: ${data.email}\nMessage: ${data.message}`
+        text: `Name: t\nEmail: h\nMessage: ho`
     };
 
     try {
