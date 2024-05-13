@@ -1,36 +1,35 @@
 const nodemailer = require('nodemailer');
 
-exports.handler = async (event) => {
-    const { name, email, subject, message } = JSON.parse(event.body);
+exports.handler = async (event, context) => {
+    const data = JSON.parse(event.body);
 
-    // Retrieve email credentials from environment variables
     const transporter = nodemailer.createTransport({
-        service: 'Zoho',
+        host: 'smtp.zoho.com',
+        port: 587, // or 587 if TLS is used
+        secure: true, // true for 465, false for other ports
         auth: {
-            user: process.env.ZOHO_EMAIL,
-            pass: process.env.ZOHO_APP_PASSWORD
+            user: 'tawonga@aumartinvestments.com',
+            pass: 'Ausan321#'
         }
     });
 
-    // Email content
     const mailOptions = {
-        from: name + ' <' + email + '>',
-        to: 'austin.nhende@aumartinvestments.com', // Your email address where you want to receive emails
-        subject: subject,
-        text: message
+        from: 'tawonga@aumartinvestments.com',
+        to: 'tawonhende@gmail.com',
+        subject: 'New Contact Form Submission',
+        text: `Name: ${data.name}\nEmail: ${data.email}\nMessage: ${data.message}`
     };
 
-    // Send email
     try {
         await transporter.sendMail(mailOptions);
         return {
             statusCode: 200,
-            body: JSON.stringify({ message: 'Message sent successfully!' })
+            body: JSON.stringify({ message: 'Email sent successfully' })
         };
     } catch (error) {
         return {
             statusCode: 500,
-            body: JSON.stringify({ message: 'Error sending message.' })
+            body: JSON.stringify({ message: 'Error sending email' })
         };
     }
 };

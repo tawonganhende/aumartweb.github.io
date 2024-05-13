@@ -139,29 +139,29 @@
                     <div class="col-lg-8">
                         <h3 class="mb-2">Send us a message</h3>
                         <p class="mb-4">We'll get back to you soon</p>
-                        <form name = "contact" method="POST" action="https://aumartinvestments.com/.netlify/functions/sendEmail" netlify>
+                        <form name="contact" id="contactForm" method="POST" action="https://aumartinvestments.com/.netlify/functions/sendEmail" netlify>
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control border-0" id="name" placeholder="Your Name">
+                                        <input type="text" class="form-control border-0" id="name" name="name" placeholder="Your Name">
                                         <label for="name">Your Name</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control border-0" id="email" placeholder="Your Email">
+                                        <input type="email" class="form-control border-0" id="email" name="email" placeholder="Your Email">
                                         <label for="email">Your Email</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control border-0" id="subject" placeholder="Subject">
+                                        <input type="text" class="form-control border-0" id="subject" name="subject" placeholder="Subject">
                                         <label for="subject">Subject</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control border-0" placeholder="Leave a message here" id="message" style="height: 160px"></textarea>
+                                        <textarea class="form-control border-0" name="message" placeholder="Leave a message here" id="message" style="height: 160px"></textarea>
                                         <label for="message">Message</label>
                                     </div>
                                 </div>
@@ -170,6 +170,7 @@
                                 </div>
                             </div>
                         </form>
+                        
                     </div>
                     <div class="col-12">
                         <div class="rounded">
@@ -322,7 +323,12 @@
         <!-- Javascript -->
         <script src="js/main.js"></script>
 
-        <script src=".netlify/sendEmail.js"></script>
+        <script src="js/contactForm.js"></script>
+
+        <script src="https://smtpjs.com/v3/smtp.js">
+        </script>
+
+        <script src="functions/sendEmail.js"></script>
 
     </body>
 
