@@ -11,3 +11,5 @@ get work emails and make sure contact page is working
 fix the newsletter part and allow people to send and receive email from us through the site
 
 get testimonials
+
+create a dashboard where he can edit pages and content
